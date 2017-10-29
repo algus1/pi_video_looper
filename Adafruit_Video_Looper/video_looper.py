@@ -147,13 +147,13 @@ class VideoLooper(object):
             font = self._small_font
         return font.render(message, True, self._fgcolor, self._bgcolor)
 
-    def _animate_countdown(self, playlist, seconds=10):
+    def _animate_countdown(self, playlist, seconds=3):
         """Print text with the number of loaded movies and a quick countdown
         message if the on screen display is enabled.
         """
         # Print message to console with number of movies in playlist.
-        message = 'Found {0} movie{1}.'.format(playlist.length(), 
-            's' if playlist.length() >= 2 else '')
+        message = 'Trovat{0} {1} video.'.format('i' if playlist.length() >= 2 else 'o',
+        playlist.length())
         self._print(message)
         # Do nothing else if the OSD is turned off.
         if not self._osd:
