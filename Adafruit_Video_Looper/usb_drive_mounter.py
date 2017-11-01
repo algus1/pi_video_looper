@@ -69,7 +69,7 @@ class USBDriveMounter(object):
 if __name__ == '__main__':
     # Run as a service that mounts all USB drives as read-only under the default
     # path of /mnt/usbdrive*.
-    drive_mounter = USBDriveMounter(readonly=True)
+    drive_mounter = USBDriveMounter(readonly=False)
     drive_mounter.mount_all()
     drive_mounter.start_monitor()
     print 'Listening for USB drive changes (press Ctrl-C to quite)...'
