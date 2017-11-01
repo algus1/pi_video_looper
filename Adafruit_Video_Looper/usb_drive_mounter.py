@@ -41,7 +41,7 @@ class USBDriveMounter(object):
         for i, node in enumerate(nodes):
             path = self._root + str(i)
             subprocess.call(['mkdir', path])
-            args = ['sudo mount']
+            args = ['mount']
             if self._readonly:
                 args.append('-r')
             args.extend([node, path])
